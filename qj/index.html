@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>我们</title>
+    <title>代倩的个人相册</title>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
@@ -14,7 +14,9 @@
     </style>
 </head>
 <body>
-
+<audio id="bgmusic" class="yue" controls preload="auto" loop="loop">
+    <source src="images/123.mp3" type="audio/mpeg">
+</audio>
     <div class="swiper-container">
         <div class="swiper-wrapper">
             
@@ -23,14 +25,14 @@
                     <img src="show/first.jpg" />
                     <div class="welcome">
                         <div class="names">
-                            代倩的个人相册
+                            代倩
                         </div>
                         <div class="words">
                             <div class="wedding ani resize" style="top: 5px;" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
                                 2018.1.11
                             </div>
                             <div class="wedding ani resize" style="top: 22px;" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="1s">
-               追回从前的记忆
+               留住精彩的瞬间！
                             </div>
                         </div>
                     </div>
@@ -180,6 +182,15 @@
             },
 
         })
+    </script>
+    <script>
+    
+
+        setTimeout(function(){
+        	var bgmusic = document.getElementById("bgmusic")
+            bgmusic.play();    
+        },2000);
+
     </script>
 </body>
 
