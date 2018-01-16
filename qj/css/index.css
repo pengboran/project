@@ -264,3 +264,25 @@ animation: qzin 8s ease 1 both;
         transform: rotate(360deg);
     }
 }
+.info div{
+	margin-left: 30%;
+}
+.p1{
+	    width: 100%;
+    top: 20%;
+    position: absolute;
+}
+.p2{
+	    top: 30%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+.p3{
+	    top: 40%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}

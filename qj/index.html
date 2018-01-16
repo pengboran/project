@@ -29,10 +29,10 @@
                         </div>
                         <div class="words">
                             <div class="wedding ani resize" style="top: 5px;" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
-                                2018.1.11
+                                2010.9.11相识
                             </div>
-                            <div class="wedding ani resize" style="top: 22px;" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="1s">
-               留住精彩的瞬间！
+                            <div class="wedding ani resize" style="top: 30px;" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="1s">
+               留住精彩的瞬间！只为等待你
                             </div>
                         </div>
                     </div>
@@ -99,11 +99,9 @@
             <div id="last" class="swiper-slide">
                 <div class="imgbox" style="height: 90vh">
                     <div class="info">
-            
-                        
-                       我没有檫去争吵的橡皮<br />
-                       只有一支画着孤独的笔
-                        <div style="font-weight: bold;">古今多少事，都付谈笑中</div>
+                    <p class="p1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay=".5s"> 我没有檫去争吵的橡皮</p>
+                    <p class="p2 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="2s" swiper-animate-delay="1s">只有一支画着孤独的笔</p>
+                    <p class="p3 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="3s" swiper-animate-delay="2s" style="font-weight: bold;">古今多少事，都付谈笑中</p>
                     </div>
 
               
@@ -117,11 +115,13 @@
 
 
     <script>
-    	   setTimeout(function(){
+    	window.onload = function() {  
+        setTimeout(function(){
         	var bgmusic = document.getElementById("bgmusic")
             bgmusic.play();    
-        },2000);
+        },1000);
 
+        
 
         scaleW = window.innerWidth / 320;
         scaleH = window.innerHeight / 480;
@@ -187,6 +187,8 @@
             },
 
         })
+} 
+    
     </script>
 </body>
 
