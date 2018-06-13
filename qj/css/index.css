@@ -286,3 +286,45 @@ animation: qzin 8s ease 1 both;
     transform: translate(-50%,-50%);
     width: 100%;
 }
+.loading{
+	    height: 100%;
+    text-align: center;
+    position: relative;
+    background: aliceblue;
+}
+.page{
+	    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.gif_demo{
+	position:fixed;    top:0;    left:0;    width:100%;    height:100%;    background:#121C1D;    z-index:9999999999;    -webkit-perspective:2000px; 
+}
+.load_img{
+	    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    margin: -30px auto 0px -30px;
+    -webkit-animation: 3s linear 0s infinite flipY;
+    border-radius: 50%;
+}
+@keyframes flipY {
+	0% {
+		-webkit-transform: perspective(1200px) rotateY(0deg);    transform: perspective(1200px) rotateY(0deg);
+	}
+	100% {
+		-webkit-transform: perspective(1200px) rotateY(360deg);    transform: perspective(1200px) rotateY(360deg);
+	}
+}
+
+@-webkit-keyframes flipY {
+	0% {
+		-webkit-transform: perspective(200px) rotateY(0deg); transform: perspective(200px) rotateY(0deg);
+	}
+	100% {
+		-webkit-transform: perspective(200px) rotateY(360deg); transform: perspective(200px) rotateY(360deg);
+	}
+}

@@ -14,6 +14,19 @@
     </style>
 </head>
 <body>
+		<div class="loading">
+<div class="pageLoading"><img class="load_img" src="show/zhu.jpg"/></div>
+    <div class="page">
+        <div class="h832" style="padding-top: 0px;">
+            <div class="innerDiv">
+                <div class="line_c">
+                    <div class="line"></div>
+                </div>
+                <p>0% loading...</p>
+            </div>
+        </div>
+    </div>
+</div>
 <audio id="bgmusic" class="yue" controls preload="auto" loop="loop">
     <source src="http://img1.wushang.com/img/2017/mobile/music.mp3" type="audio/mpeg">
 </audio>
@@ -29,7 +42,7 @@
                         </div>
                         <div class="words">
                             <div class="wedding ani resize" style="top: 5px;" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
-                                送给最可爱的你！
+                                
                             </div>
                             <div class="wedding ani resize" style="top: 30px;" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="1s">
                   留住精彩的瞬间！
@@ -60,7 +73,7 @@
                     <div class="circle" style="width: 150px; height: 150px; top: 50px; left: 5px;"></div>
                     <div class="circle fast" style="width: 100px; height: 100px; top: 120px; right: 5px;"></div>
                     <div class="txtwarper ani resize" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay=".5s">
-                        <img src="show/er.png" style="height: 150px;width:150px;display: inline-block;" />
+                       <!-- <img src="show/er.png" style="height: 150px;width:150px;display: inline-block;" />-->
                     </div>
                 </div>
               
@@ -72,7 +85,7 @@
                     <div class="circle fast" style="width: 100px; height: 100px; top: 120px; right: 5px;"></div>
                     <div class="circle fast" style="width: 120px; height: 120px; top: 320px; left: 15px;"></div>
                     <div class="txtwarper ani resize" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="5s">
-                        <img src="show/er.png" style="height: 150px;width:150px;display: inline-block;" />
+                       <!-- <img src="show/er.png" style="height: 150px;width:150px;display: inline-block;" />-->
                     </div>
                 </div>
             </div>
@@ -80,7 +93,7 @@
                 <div class="imgbox horizontal">
                     <img class="moveX" src="show/p4.jpeg" />
                     <div class="txtwarper ani resize" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay=".5s">
-                        <img src="show/zhi.png" style="height: 200px;width: 200px;display: inline-block;" />
+                        <!--<img src="show/zhi.png" style="height: 200px;width: 200px;display: inline-block;" />-->
                     </div>
                 </div>
             </div>
@@ -92,7 +105,7 @@
                     <div class="circle fast" style="width: 120px; height: 120px; top: 320px; left: 15px;"></div>
                     <div class="circle" style="width: 150px; height: 150px; bottom: 20px; left: 5px;"></div>
                     <div class="txtwarper ani resize" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay=".5s">
-                        <img src="show/shen.png" style="height: 200px;width: 200px;display: inline-block;" />
+                       <!-- <img src="show/shen.png" style="height: 200px;width: 200px;display: inline-block;" />-->
                     </div>
                 </div>
             </div>
@@ -112,17 +125,10 @@
         </div>
         <img src="./images/upArrow.png" id="array" class="resize" />
     </div>
-
-
-    <script>
-    	window.onload = function() {  
-        setTimeout(function(){
-        	var bgmusic = document.getElementById("bgmusic")
-            bgmusic.play();    
-        },1000);
-
-        
-
+    <script src="js/swiper.min.js"></script>
+    <script src="js/swiper.animate.min.js"></script>
+        <script src="js/zpto.js"></script>
+ <script>
         scaleW = window.innerWidth / 320;
         scaleH = window.innerHeight / 480;
         var resizes = document.querySelectorAll('.resize');
@@ -132,7 +138,20 @@
             resizes[j].style.top = parseInt(resizes[j].style.top) * scaleH + 'px';
             resizes[j].style.left = parseInt(resizes[j].style.left) * scaleW + 'px';
         }
-        var mySwiper = new Swiper('.swiper-container', {
+        var speed=0;
+    function preloadimages(arr){
+        var newimages=[], loadedimages=0;
+        var arr=(typeof arr!="object")? [arr] : arr;
+        function imageloadpost(){
+            loadedimages++;
+            speed=parseInt(loadedimages/arr.length*100);
+            $('.loading p').text(speed+'% loading...');
+            $('.line_c .line').css('left',-(100-speed)+'%');
+            if (loadedimages==arr.length){
+                $('.loading').hide();
+                	var bgmusic = document.getElementById("bgmusic")
+            bgmusic.play();    
+                        var mySwiper = new Swiper('.swiper-container', {
             autoplay:10000,//可选选项，自动滑动
             direction: 'vertical',
             mousewheelControl: true,
@@ -187,8 +206,24 @@
             },
 
         })
-} 
+
+            }
+        }
+        for (var i=0; i<arr.length; i++){
+            newimages[i]=new Image();
+            newimages[i].src=arr[i];
+            newimages[i].onload=function(){
+                imageloadpost();
+            }
+            newimages[i].onerror=function(){
+                imageloadpost()
+            }
+        }
+    }
+    var imagesarray=["https://pengboran.github.io/swiper/13111/show/p1.jpg","https://pengboran.github.io/swiper/13111/show/p2.jpg","https://pengboran.github.io/swiper/13111/show/p4.jpg"];
+    preloadimages(imagesarray);
     </script>
+
 </body>
 
 </html>
