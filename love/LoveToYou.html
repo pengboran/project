@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>菇凉，你好！</title>
+
+		<!-- Bootstrap -->
+		<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+		<!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+		<!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+		<style type="text/css">
+			.btn_bendi {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+			}
+			
+			.smallMode {
+				width: 200px;
+				height: 100px;
+				font-size: 14px;
+				position: absolute;
+				top: 8%;
+				left: 23%;
+			    border: 1px solid #ccc;
+				text-align: center;
+				line-height: 50px;
+				background: beige;
+				border-radius: 10px;
+			}
+			
+			.smallMode1,.smallMode2,.smallMode3,.smallMode4 {
+				display: none;
+			}
+			
+			 *{
+                margin: 0;
+                padding: 0;
+            }
+            .heart{
+                position:absolute;
+                left: 50%;
+                top:50%;
+                margin-left: -150px;
+                margin-top: -135px;
+                width: 300px;
+                height:270px;
+                background: transparent;
+                /*box-shadow: 2px 2px 5px #000;*/
+                filter:drop-shadow(0px 0px 20px rgb(255,20,20));
+                animation: test 1s linear infinite;
+            }
+            .heart:before,
+            .heart:after{
+                content: "";
+                position: absolute;
+                left: 150px;
+                width: 150px;
+                height: 240px;
+                background: rgb(255,0,0);
+                border-radius: 150px 150px 0 0;
+                transform:rotate(-45deg);
+                transform-origin: 0 100%;
+            }
+            .heart:after{
+                left: 0;
+                transform:rotate(45deg);
+                transform-origin: 100% 100%;
+            }
+            @keyframes test{
+                0%{
+                    transform: scale(0.8,0.8);
+                    opacity: 1;
+                }
+                25%{
+                    transform: scale(1,1);
+                    opacity: 0.8;
+                }
+                100%{
+                    transform: scale(0.8,0.8);
+                    opacity: 1;
+                }
+            }
+		</style>
+	</head>
+
+	<body>
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary btn-lg btn_bendi" data-toggle="modal" data-target="#myModal">
+  你敢点我吗?
+</button>
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+				<!--		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+						<h4 class="modal-title" id="myModalLabel">来自一位霸气的小哥哥</h4>
+					</div>
+					<div class="modal-body">
+						做我女朋友好不好?
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default like">好</button>
+						<button type="button" class="btn btn-primary noLike">不好</button>
+					</div>
+					<!--
+      	作者：237523733@qq.com
+      	时间：2018-06-19
+      	描述：
+      -->
+					<div class="smallMode smallMode1">
+						<p>房子写你的名字</p>
+						<button class="btn btn-default mode1" type="submit" style="margin-top: -20px">确定</button>
+					</div>
+
+					<div class="smallMode smallMode2">
+						<p>家务我全包</p>
+						<button class="btn btn-default mode2" type="submit" style="margin-top: -20px">确定</button>
+					</div>
+					<div class="smallMode smallMode3">
+						<p>我妈会游泳</p>
+						<button class="btn btn-default mode3" type="submit" style="margin-top: -20px">确定</button>
+					</div>
+					<div class="smallMode smallMode4">
+						<p>恭喜你获得小哥哥一枚...</p>
+						<button class="btn btn-default mode4" type="submit" style="margin-top: -20px">确定</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+       <div class="heart" style="display: none;"></div>
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$(".noLike").click(function() {
+				$(".smallMode1").css("display", "block")
+			})
+				$(".mode1").click(function() {
+				$(".smallMode2").css("display", "block")
+			})
+					$(".mode2").click(function() {
+				$(".smallMode3").css("display", "block")
+			})
+							$(".mode3").click(function() {
+				$(".smallMode").css("display", "none")
+			})
+			$(".like").click(function(){
+					$(".smallMode4").css("display", "block")
+			})
+					$(".mode4").click(function() {
+				$(".heart").css("display", "block")
+				$(".heart").siblings().css("display", "none");
+			})
+		</script>
+	</body>
+
+</html>
