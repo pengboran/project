@@ -22,7 +22,7 @@
     // of different video formats to add
     src: [
       {
-        src: 'http://wx.wushang.com/bideo/demo.mp4',
+        src: 'demo.mp4',
         type: 'video/mp4',
 	muted:false,
 	loop:false
@@ -40,7 +40,29 @@
       document.querySelector('#video_cover').style.display = 'none';
        var md= document.getElementById("background_video");
         var pt = md.duration;
-        setTimeout('window.location.href="http://www.baidu.com"',pt*975);
+        setTimeout(function(){
+        	document.getElementById("play").style.display = 'inline-block'
+        	document.getElementById("pause").style.display = 'inline-none'
+        },pt*975);
     }
   });
 }());
+(function(){
+        var video;
+        var scale = 0.8;
+        var initialize = function() {
+            video = document.getElementById("background_video");
+            video.addEventListener('loadeddata',captureImage);
+        };
+
+        var captureImage = function() {
+            var canvas = document.createElement("canvas");
+            canvas.width = video.videoWidth * scale;
+            canvas.height = video.videoHeight * scale;
+            canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+           var _src = canvas.toDataURL("image/png");
+           var video_coverImg = document.getElementById("video_coverImg")
+           video_coverImg.setAttribute("src",_src)
+        };
+        initialize();
+})();
