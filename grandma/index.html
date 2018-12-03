@@ -292,9 +292,9 @@ animation: qzin 8s ease infinite both;
 					<div class="swiper-slide">
 						<img src="img/4.jpg" class="ani resize xzAni">
 					</div>
-					<div class="swiper-slide">
+					<!--<div class="swiper-slide">
 						<img src="img/5.jpg" class="ani resize qzin">
-					</div>
+					</div>-->
 					<div class="swiper-slide">
 						<img src="img/6.jpg" class="ani resize xzAni">
 					</div>
@@ -349,12 +349,11 @@ animation: qzin 8s ease infinite both;
 						$('.loading').hide();
 										document.getElementById("bgmusic").play()
 						var bannerSwiper = new Swiper('#banner', {
-							mousewheel: true,
+						
 							effect: 'coverflow',
-							speed: 5000,
-							autoplay : true,
+							speed:1000,
 							loop : true,
-							watchSlidesProgress: true,
+				
 							navigation: {
 								nextEl: '.swiper-button-next',
 								prevEl: '.swiper-button-prev'
@@ -385,7 +384,7 @@ animation: qzin 8s ease infinite both;
 					}
 				}
 			}
-			var imagesarray = ["https://pengboran.github.io/swiper/13111/show/p1.jpg", "https://pengboran.github.io/swiper/13111/show/p2.jpg", "https://pengboran.github.io/swiper/13111/show/p4.jpg"];
+			var imagesarray = ["https://pengboran.github.io/swiper/13111/show/p1.jpg", "https://pengboran.github.io/swiper/grandma/img/3.jpg", "https://pengboran.github.io/swiper/13111/show/p4.jpg"];
 			preloadimages(imagesarray);
 			
 			           (function() {
