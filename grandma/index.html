@@ -3,7 +3,7 @@
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Progress演示，志玲姐姐 - swiper中文网</title>
+		<title>奶奶的相册</title>
 		<meta name="viewport" content="initial-scale=1">
 		<!--<link rel="stylesheet" href="../../dist/css/swiper.min.css">
 <script src="../../dist/js/swiper.min.js"></script>-->
@@ -335,7 +335,7 @@ animation: qzin 8s ease infinite both;
 					$('.line_c .line').css('left', -(100 - speed) + '%');
 					if(loadedimages == arr.length) {
 						$('.loading').hide();
-//										document.getElementById("bgmusic")[0].play()
+										document.getElementById("bgmusic").play()
 						var bannerSwiper = new Swiper('#banner', {
 							mousewheel: true,
 							effect: 'coverflow',
@@ -375,7 +375,7 @@ animation: qzin 8s ease infinite both;
 			preloadimages(imagesarray);
 			
 			           (function() {
-			           	 document.getElementById("bgmusic").play();
+
                 var pause=true;
                 document.getElementsByClassName("pauseBtn")[0].onclick=function(){
                     if (pause) {
