@@ -15,7 +15,7 @@
 
 	<body>
 		<div class="loading">
-			<div class="pageLoading"><img class="load_img" src="images/zhu.jpg" /></div>
+			<!--<div class="pageLoading"><img class="load_img" src="images/zhu.jpg" /></div>-->
 			<div class="page">
 				<div class="h832" style="padding-top: 0px;">
 					<div class="innerDiv">
@@ -65,6 +65,7 @@
 		<script src="js/zpto.js"></script>
 
 		<script>
+			$(".autoPlayBox").hide();
 			scaleW = window.innerWidth / 320;
 			scaleH = window.innerHeight / 480;
 			var resizes = document.querySelectorAll('.resize');
@@ -88,6 +89,7 @@
 					$('.line_c .line').css('left', -(100 - speed) + '%');
 					if(loadedimages == arr.length) {
 						$('.loading').hide();
+						$(".autoPlayBox").show();
 						$(".swiper-container").css("display", "block");
 					}
 				}
