@@ -3,7 +3,7 @@
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>13111.604</title>
+		<title>致王丫头</title>
 		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 		<link rel="stylesheet" href="css/swiper.min.css">
 		<link rel="stylesheet" href="css/animate.min.css">
@@ -14,8 +14,21 @@
 	</head>
 
 	<body>
+			<div class="loading">
+			<div class="pageLoading"><img class="load_img" src="images/860230948310898378.jpg" /></div>
+			<div class="page">
+				<div class="h832" style="padding-top: 0px;">
+					<div class="innerDiv">
+						<div class="line_c">
+							<div class="line"></div>
+						</div>
+						<p>0% loading...</p>
+					</div>
+				</div>
+			</div>
+		</div>
 		<audio id="bgmusic" class="yue" controls preload="auto" loop="loop">
-			<source src="images/00.mp3" type="audio/mpeg">
+			<source src="https://wx.wushang.com/papi/00.mp3" type="audio/mpeg">
 		</audio>
 		<div class="swiper-container">
 			<div class="swiper-wrapper">
@@ -40,80 +53,107 @@
 			</div>
 			<div class="pauseBtn rotate"></div>
 		</div>
-        <div class="fixed">
-        	
-        </div>
+     
 		<script src="js/swiper.min.js"></script>
 		<script src="js/swiper.animate.min.js"></script>
 		<script src="js/zpto.js"></script>
 
 		<script>
-			scaleW = window.innerWidth / 320;
-			scaleH = window.innerHeight / 480;
-			var resizes = document.querySelectorAll('.resize');
-			for(var j = 0; j < resizes.length; j++) {
-				resizes[j].style.width = parseInt(resizes[j].style.width) * scaleW + 'px';
-				resizes[j].style.height = parseInt(resizes[j].style.height) * scaleH + 'px';
-				resizes[j].style.top = parseInt(resizes[j].style.top) * scaleH + 'px';
-				resizes[j].style.left = parseInt(resizes[j].style.left) * scaleW + 'px';
-			}
+				 scaleW = window.innerWidth / 320;
+        scaleH = window.innerHeight / 480;
+        var resizes = document.querySelectorAll('.resize');
+        for (var j = 0; j < resizes.length; j++) {
+            resizes[j].style.width = parseInt(resizes[j].style.width) * scaleW + 'px';
+            resizes[j].style.height = parseInt(resizes[j].style.height) * scaleH + 'px';
+            resizes[j].style.top = parseInt(resizes[j].style.top) * scaleH + 'px';
+            resizes[j].style.left = parseInt(resizes[j].style.left) * scaleW + 'px';
+        }
 			var speed = 0;
-						document.getElementById("bgmusic").play()
-						var mySwiper = new Swiper('.swiper-container', {
-							direction: 'vertical',
-							mousewheelControl: true,
-							loop: false,
-							speed: 1200,
-							zoom: true,
-							pagination: '.swiper-pagination',
-							paginationType: 'progress',
-							onInit: function(swiper) {
-								swiperAnimateCache(swiper);
-								swiperAnimate(swiper);
-							},
-							onSlideChangeEnd: function(swiper) {
-								swiperAnimate(swiper);
-							},
-							onTransitionEnd: function(swiper) {
-								swiperAnimate(swiper);
-							},
-							onTouchStart: function(s) {
-								console.log(s.activeIndex);
-								if(s.activeIndex == 3) {
-									//说明将要滑动到第三章图
-									//给第三章图片加上样式
-									document.getElementById("qzinimg").className = "qzin";
-								} else {
-									//移除样式
-								
-								}
-							},
 
-							watchSlidesProgress: true,
+			function preloadimages(arr) {
+				var newimages = [],
+					loadedimages = 0;
+				var arr = (typeof arr != "object") ? [arr] : arr;
 
-							onProgress: function(swiper) {
-								for(var i = 0; i < swiper.slides.length; i++) {
-									var slide = swiper.slides[i];
-									var progress = slide.progress;
-									var translate = progress * swiper.height / 4;
-									scale = 1 - Math.min(Math.abs(progress * 0.5), 1);
-									var opacity = 1 - Math.min(Math.abs(progress / 2), 0.5);
-									slide.style.opacity = opacity;
-									es = slide.style;
-									es.webkitTransform = es.MsTransform = es.msTransform = es.MozTransform = es.OTransform = es.transform = 'translate3d(0,' + translate + 'px,-' + translate + 'px) scaleY(' + scale + ')';
-								}
-							},
+				function imageloadpost() {
+					loadedimages++;
+					speed = parseInt(loadedimages / arr.length * 100);
+					$('.loading p').text(speed + '% loading...');
+					$('.line_c .line').css('left', -(100 - speed) + '%');
+					if(loadedimages == arr.length) {
+						$('.loading').hide();
+										document.getElementById("bgmusic").play()
+					               var mySwiper = new Swiper('.swiper-container', {
+            autoplay:10000,//可选选项，自动滑动
+            direction: 'vertical',
+            mousewheelControl: true,
+            loop: false,
+            speed: 1200,
+            zoom: true,
+            pagination: '.swiper-pagination',
+            paginationType: 'progress',
+            onInit: function (swiper) {
+                swiperAnimateCache(swiper);
+                swiperAnimate(swiper);
+            },
+            onSlideChangeEnd: function (swiper) {
+                swiperAnimate(swiper);
+            },
+            onTransitionEnd: function (swiper) {
+                swiperAnimate(swiper);
+            },
+            onTouchStart: function (s) {
+                console.log(s.activeIndex);
+                if (s.activeIndex == 3) {
+                    //说明将要滑动到第三章图
+                    //给第三章图片加上样式
+                    document.getElementById("qzinimg").className = "qzin";
+                } else {
+                    //移除样式
+                    document.getElementById("qzinimg").className = "";
+                }
+            },
 
-							onSetTransition: function(swiper, speed) {
-								for(var i = 0; i < swiper.slides.length; i++) {
-									es = swiper.slides[i].style;
-									es.webkitTransitionDuration = es.MsTransitionDuration = es.msTransitionDuration = es.MozTransitionDuration = es.OTransitionDuration = es.transitionDuration = speed + 'ms';
+            watchSlidesProgress: true,
 
-								}
-							},
+            onProgress: function (swiper) {
+                for (var i = 0; i < swiper.slides.length; i++) {
+                    var slide = swiper.slides[i];
+                    var progress = slide.progress;
+                    var translate = progress * swiper.height / 4;
+                    scale = 1 - Math.min(Math.abs(progress * 0.5), 1);
+                    var opacity = 1 - Math.min(Math.abs(progress / 2), 0.5);
+                    slide.style.opacity = opacity;
+                    es = slide.style;
+                    es.webkitTransform = es.MsTransform = es.msTransform = es.MozTransform = es.OTransform = es.transform = 'translate3d(0,' + translate + 'px,-' + translate + 'px) scaleY(' + scale + ')';
+                }
+            },
 
-						})
- 
+            onSetTransition: function (swiper, speed) {
+                for (var i = 0; i < swiper.slides.length; i++) {
+                    es = swiper.slides[i].style;
+                    es.webkitTransitionDuration = es.MsTransitionDuration = es.msTransitionDuration = es.MozTransitionDuration = es.OTransitionDuration = es.transitionDuration = speed + 'ms';
+
+                }
+            },
+
+        })
+					}
+			}
+				
+				for(var i = 0; i < arr.length; i++) {
+					newimages[i] = new Image();
+					newimages[i].src = arr[i];
+					newimages[i].onload = function() {
+						imageloadpost();
+					}
+					newimages[i].onerror = function() {
+						imageloadpost()
+					}
+				}
+			}
+			var imagesarray = ["https://pengboran.github.io/swiper/YaTou/images/452826202081028910.jpg","https://pengboran.github.io/swiper/13111/show/p4.jpg"];
+			preloadimages(imagesarray);
 				
 		</script>
 	</body>
