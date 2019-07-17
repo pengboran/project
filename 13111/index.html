@@ -163,7 +163,7 @@
             $('.line_c .line').css('left',-(100-speed)+'%');
             if (loadedimages==arr.length){
                 $('.loading').hide();
-                $(".autoPlayBox1").show();
+                $(".autoPlayBox1").css("display", "block");
 
             }
         }
@@ -183,7 +183,7 @@
 		
 			var pause = false;
 			document.getElementsByClassName("autoPlayBox1")[0].onclick = function() {
-				$(".autoPlayBox1").hide();
+				$(".autoPlayBox1").css("display", "none");
 				$(".info").css("display","block")
 					var mySwiper = new Swiper('.swiper-container', {
 							autoplay: 10000, //可选选项，自动滑动
