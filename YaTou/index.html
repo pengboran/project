@@ -9,7 +9,6 @@
 		<link rel="stylesheet" href="css/animate.min.css">
 		<link href="css/index.css" rel="stylesheet" />
 		<style>
-
 		</style>
 	</head>
 
@@ -59,6 +58,7 @@
 		<script src="js/zpto.js"></script>
 
 		<script>
+			$(".swiper-container").hide();
 				 scaleW = window.innerWidth / 320;
         scaleH = window.innerHeight / 480;
         var resizes = document.querySelectorAll('.resize');
@@ -69,12 +69,10 @@
             resizes[j].style.left = parseInt(resizes[j].style.left) * scaleW + 'px';
         }
 			var speed = 0;
-
 			function preloadimages(arr) {
 				var newimages = [],
 					loadedimages = 0;
 				var arr = (typeof arr != "object") ? [arr] : arr;
-
 				function imageloadpost() {
 					loadedimages++;
 					speed = parseInt(loadedimages / arr.length * 100);
@@ -82,6 +80,7 @@
 					$('.line_c .line').css('left', -(100 - speed) + '%');
 					if(loadedimages == arr.length) {
 						$('.loading').hide();
+						$(".swiper-container").show();
 										document.getElementById("bgmusic").play()
 					               var mySwiper = new Swiper('.swiper-container', {
             autoplay:10000,//可选选项，自动滑动
@@ -109,15 +108,12 @@
                     es.webkitTransform = es.MsTransform = es.msTransform = es.MozTransform = es.OTransform = es.transform = 'translate3d(0,' + translate + 'px,-' + translate + 'px) scaleY(' + scale + ')';
                 }
             },
-
             onSetTransition: function (swiper, speed) {
                 for (var i = 0; i < swiper.slides.length; i++) {
                     es = swiper.slides[i].style;
                     es.webkitTransitionDuration = es.MsTransitionDuration = es.msTransitionDuration = es.MozTransitionDuration = es.OTransitionDuration = es.transitionDuration = speed + 'ms';
-
                 }
             },
-
         })
 					}
 			}
