@@ -292,7 +292,7 @@ animation: qzin 8s ease 1 both;
 
 .autoPlayBox1{
 	position: absolute;
-    left: 50%;
+    left: 40%;
     top: 50%;
     transform: translate(-50%,-50%);
     width: 80px;
