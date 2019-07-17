@@ -42,56 +42,6 @@ img {
     opacity: 1;
 }
 
-@-webkit-keyframes start {
-    0%,30% {
-        opacity: 0;
-        -webkit-transform: translate(0,10px);
-    }
-
-    60% {
-        opacity: 1;
-        -webkit-transform: translate(0,0);
-    }
-
-    100% {
-        opacity: 0;
-        -webkit-transform: translate(0,-8px);
-    }
-}
-
-@-moz-keyframes start {
-    0%,30% {
-        opacity: 0;
-        -moz-transform: translate(0,10px);
-    }
-
-    60% {
-        opacity: 1;
-        -moz-transform: translate(0,0);
-    }
-
-    100% {
-        opacity: 0;
-        -moz-transform: translate(0,-8px);
-    }
-}
-
-@keyframes start {
-    0%,30% {
-        opacity: 0;
-        transform: translate(0,10px);
-    }
-
-    60% {
-        opacity: 1;
-        transform: translate(0,0);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translate(0,-8px);
-    }
-}
 
 .ani {
     position: absolute;
@@ -190,50 +140,6 @@ animation: moveX 20s ease infinite both;
 .qzin {
 animation: qzin 8s ease 1 both;
 } 
-
-
-/*旋转放大*/
-@keyframes xz {
-  0% {
-      transform: rotate(0deg) scale(1);
-  }
-  50%{  transform: rotate(7deg) scale(1.2); }
-
-  100%{  transform: rotate(0) scale(1) }
-}
-/*气泡闪烁*/
-@keyframes twinkle {
-     0% {
-         opacity: 0;
-     }
-      50% {
-         opacity: .2;
-     }
-     100% {
-         opacity: 0;
-     }
-}
-/*平行移动*/
-@keyframes moveX {
- 0% {transform:translate(0,0)}
- 50% {transform:translate(-420px,0)}
- 0% {transform:translate(0,0)}
- 
-}
-/*曲折进入*/
-  @-webkit-keyframes qzin {
-                0% {
-                     transform: scaleX(0.6) scaleY(0.6) translateX(3px) translateY(941px) rotate(-10deg) rotateX(0deg) rotateY(0deg);
-                }
-
-                50% {
-                    transform: scaleX(0.7) scaleY(0.7) translateX(0px) translateY(0px) rotate(10deg) rotateX(0deg) rotateY(0deg);
-                }
-
-                100% {
-                     transform: scaleX(1) scaleY(1) translateX(0px) translateY(0px) rotate(0deg) rotateX(0deg) rotateY(0deg);
-                }
-   }
  .butons {
      position: absolute;
      width: 100%;
@@ -356,23 +262,7 @@ animation: qzin 8s ease 1 both;
     -webkit-animation: 3s linear 0s infinite flipY;
     border-radius: 50%;
 }
-@keyframes flipY {
-	0% {
-		-webkit-transform: perspective(1200px) rotateY(0deg);    transform: perspective(1200px) rotateY(0deg);
-	}
-	100% {
-		-webkit-transform: perspective(1200px) rotateY(360deg);    transform: perspective(1200px) rotateY(360deg);
-	}
-}
 
-@-webkit-keyframes flipY {
-	0% {
-		-webkit-transform: perspective(200px) rotateY(0deg); transform: perspective(200px) rotateY(0deg);
-	}
-	100% {
-		-webkit-transform: perspective(200px) rotateY(360deg); transform: perspective(200px) rotateY(360deg);
-	}
-}
 			/**音乐**/
 
 .pauseBtn {
@@ -400,7 +290,7 @@ animation: qzin 8s ease 1 both;
 	background-color: rgba(0,0,4,.5);
 }
 
-.autoPlayBox{
+.autoPlayBox1{
 	position: absolute;
     left: 50%;
     top: 50%;
@@ -410,6 +300,6 @@ animation: qzin 8s ease 1 both;
     z-index: 10;
 	
 }
-.autoPlayBox img{
+.autoPlayBox1 img{
 	width: 100%;
 }
