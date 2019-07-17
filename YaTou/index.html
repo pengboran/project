@@ -58,8 +58,7 @@
 		<script src="js/zpto.js"></script>
 
 		<script>
-			$(".swiper-container").hide();
-			$(".info").hide();
+			$(".swiper-container").css("display","none");
 				 scaleW = window.innerWidth / 320;
         scaleH = window.innerHeight / 480;
         var resizes = document.querySelectorAll('.resize');
@@ -81,8 +80,7 @@
 					$('.line_c .line').css('left', -(100 - speed) + '%');
 					if(loadedimages == arr.length) {
 						$('.loading').hide();
-						$(".swiper-container").show();
-						$(".info").show();
+					$(".swiper-container").css("display","block");
 										document.getElementById("bgmusic").play()
 					               var mySwiper = new Swiper('.swiper-container', {
             autoplay:10000,//可选选项，自动滑动
