@@ -96,26 +96,7 @@
                 swiperAnimateCache(swiper);
                 swiperAnimate(swiper);
             },
-            onSlideChangeEnd: function (swiper) {
-                swiperAnimate(swiper);
-            },
-            onTransitionEnd: function (swiper) {
-                swiperAnimate(swiper);
-            },
-            onTouchStart: function (s) {
-                console.log(s.activeIndex);
-                if (s.activeIndex == 3) {
-                    //说明将要滑动到第三章图
-                    //给第三章图片加上样式
-                    document.getElementById("qzinimg").className = "qzin";
-                } else {
-                    //移除样式
-                    document.getElementById("qzinimg").className = "";
-                }
-            },
-
             watchSlidesProgress: true,
-
             onProgress: function (swiper) {
                 for (var i = 0; i < swiper.slides.length; i++) {
                     var slide = swiper.slides[i];
