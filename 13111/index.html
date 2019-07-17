@@ -10,6 +10,12 @@
     <style>
 
     </style>
+    <script>
+            if ("wView" in window) { //用于苹果设备自动播放
+                window.wView.allowsInlineMediaPlayback = "YES";
+                window.wView.mediaPlaybackRequiresUserAction = "NO";
+            }
+</script>
 </head>
 <body>
 	<div class="loading">
@@ -154,7 +160,7 @@
             $('.line_c .line').css('left',-(100-speed)+'%');
             if (loadedimages==arr.length){
                 $('.loading').hide();
-          
+          document.getElementById("bgmusic").play()
                         var mySwiper = new Swiper('.swiper-container', {
             autoplay:10000,//可选选项，自动滑动
             direction: 'vertical',
@@ -226,22 +232,23 @@
     }
     var imagesarray=["https://pengboran.github.io/swiper/13111/show/p1.jpg","https://pengboran.github.io/swiper/13111/show/p2.jpg","https://pengboran.github.io/swiper/13111/show/p4.jpg"];
     preloadimages(imagesarray);
-    function audioAutoPlay(id){
-　　var audio = document.getElementById(id),
-　　　　play = function(){
-　　　　　　audio.play();
-　　　　　　document.removeEventListener("touchstart",play, false);
-　　　　};
-　　audio.play();
-　　document.addEventListener("WeixinJSBridgeReady", function () {//微信
-　　　　play();
-　　}, false);
-　　document.addEventListener('YixinJSBridgeReady', function() {//易信
-　　　　play();
-　　}, false);
-　　document.addEventListener("touchstart",play, false);
-}
-audioAutoPlay('bgmusic');
+    
+//  function audioAutoPlay(id){
+//　　var audio = document.getElementById(id),
+//　　　　play = function(){
+//　　　　　　audio.play();
+//　　　　　　document.removeEventListener("touchstart",play, false);
+//　　　　};
+//　　audio.play();
+//　　document.addEventListener("WeixinJSBridgeReady", function () {//微信
+//　　　　play();
+//　　}, false);
+//　　document.addEventListener('YixinJSBridgeReady', function() {//易信
+//　　　　play();
+//　　}, false);
+//　　document.addEventListener("touchstart",play, false);
+//}
+//audioAutoPlay('bgmusic');
     </script>
 </body>
 
