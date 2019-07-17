@@ -298,6 +298,7 @@ animation: qzin 8s ease 1 both;
     width: 80px;
     height: 80px;
     z-index: 10;
+    display: none;
 	
 }
 .autoPlayBox1 img{
