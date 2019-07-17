@@ -58,7 +58,7 @@
 		<script src="js/zpto.js"></script>
 
 		<script>
-			
+		
 				 scaleW = window.innerWidth / 320;
         scaleH = window.innerHeight / 480;
         var resizes = document.querySelectorAll('.resize');
@@ -81,7 +81,7 @@
 					if(loadedimages == arr.length) {
 						$('.loading').hide();
 					$(".swiper-container").css("display","block");
-										document.getElementById("bgmusic").play()
+									
 					               var mySwiper = new Swiper('.swiper-container', {
             autoplay:10000,//可选选项，自动滑动
             direction: 'vertical',
@@ -131,7 +131,21 @@
 			}
 			var imagesarray = ["https://pengboran.github.io/swiper/YaTou/images/452826202081028910.jpg"];
 			preloadimages(imagesarray);
-				
+				       var pause=true;
+                document.getElementsByClassName("pauseBtn")[0].onclick=function(){
+                    if (pause) {
+                        pause=false;
+                        document.getElementById("bgmusic").pause();
+                        this.style.background="url(images/music2.png) no-repeat";
+                        this.style.backgroundSize="100% 100%";
+                    }else{
+                        pause=true;
+                        document.getElementById("bgmusic").play();
+                        this.style.background="url('images/music1.png') no-repeat";
+                        this.style.backgroundSize="100% 100%";
+                    }
+
+                }
 		</script>
 	</body>
 
