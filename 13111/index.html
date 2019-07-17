@@ -19,7 +19,7 @@
 </head>
 <body>
 	<div class="loading">
-<div class="pageLoading"><img class="load_img" src="show/zhu.jpg"/></div>
+<!--<div class="pageLoading"><img class="load_img" src="show/zhu.jpg"/></div>-->
     <div class="page">
         <div class="h832" style="padding-top: 0px;">
             <div class="innerDiv">
@@ -34,6 +34,9 @@
 <audio id="bgmusic" class="yue" controls preload="auto" loop="loop">
     <source src="show/00.mp3" type="audio/mpeg">
 </audio>
+	<div class="autoPlayBox1">
+						<img  src="images/play.png" />
+					</div>
     <div class="swiper-container">
         <div class="swiper-wrapper">
             
@@ -138,8 +141,8 @@
     <script>
     
 
-        var audio = document.getElementById("bgmusic");
-
+       
+        $(".autoPlayBox1").hide();
         scaleW = window.innerWidth / 320;
         scaleH = window.innerHeight / 480;
         var resizes = document.querySelectorAll('.resize');
@@ -160,66 +163,7 @@
             $('.line_c .line').css('left',-(100-speed)+'%');
             if (loadedimages==arr.length){
                 $('.loading').hide();
-               
-           document.addEventListener("touchstart",function(){
-           	    audio.play()
-           }, false);
-
-                        var mySwiper = new Swiper('.swiper-container', {
-            autoplay:10000,//可选选项，自动滑动
-            direction: 'vertical',
-            mousewheelControl: true,
-            loop: true,
-            speed: 1200,
-            zoom: true,
-            pagination: '.swiper-pagination',
-            paginationType: 'progress',
-            onInit: function (swiper) {
-                swiperAnimateCache(swiper);
-                swiperAnimate(swiper);
-            },
-            onSlideChangeEnd: function (swiper) {
-                swiperAnimate(swiper);
-            },
-            onTransitionEnd: function (swiper) {
-                swiperAnimate(swiper);
-            },
-            onTouchStart: function (s) {
-                console.log(s.activeIndex);
-                if (s.activeIndex == 3) {
-                    //说明将要滑动到第三章图
-                    //给第三章图片加上样式
-                    document.getElementById("qzinimg").className = "qzin";
-                } else {
-                    //移除样式
-                    document.getElementById("qzinimg").className = "";
-                }
-            },
-
-            watchSlidesProgress: true,
-
-            onProgress: function (swiper) {
-                for (var i = 0; i < swiper.slides.length; i++) {
-                    var slide = swiper.slides[i];
-                    var progress = slide.progress;
-                    var translate = progress * swiper.height / 4;
-                    scale = 1 - Math.min(Math.abs(progress * 0.5), 1);
-                    var opacity = 1 - Math.min(Math.abs(progress / 2), 0.5);
-                    slide.style.opacity = opacity;
-                    es = slide.style;
-                    es.webkitTransform = es.MsTransform = es.msTransform = es.MozTransform = es.OTransform = es.transform = 'translate3d(0,' + translate + 'px,-' + translate + 'px) scaleY(' + scale + ')';
-                }
-            },
-
-            onSetTransition: function (swiper, speed) {
-                for (var i = 0; i < swiper.slides.length; i++) {
-                    es = swiper.slides[i].style;
-                    es.webkitTransitionDuration = es.MsTransitionDuration = es.msTransitionDuration = es.MozTransitionDuration = es.OTransitionDuration = es.transitionDuration = speed + 'ms';
-
-                }
-            },
-
-        })
+                $(".autoPlayBox1").show();
 
             }
         }
@@ -236,23 +180,55 @@
     }
     var imagesarray=["https://pengboran.github.io/swiper/13111/show/p1.jpg","https://pengboran.github.io/swiper/13111/show/p2.jpg","https://pengboran.github.io/swiper/13111/show/p4.jpg"];
     preloadimages(imagesarray);
-    
-//  function audioAutoPlay(id){
-//　　var audio = document.getElementById(id),
-//　　　　play = function(){
-//　　　　　　audio.play();
-//　　　　　　document.removeEventListener("touchstart",play, false);
-//　　　　};
-//　　audio.play();
-//　　document.addEventListener("WeixinJSBridgeReady", function () {//微信
-//　　　　play();
-//　　}, false);
-//　　document.addEventListener('YixinJSBridgeReady', function() {//易信
-//　　　　play();
-//　　}, false);
-//　　document.addEventListener("touchstart",play, false);
-//}
-//audioAutoPlay('bgmusic');
+		
+			var pause = false;
+			document.getElementsByClassName("autoPlayBox1")[0].onclick = function() {
+				$(".autoPlayBox1").hide();
+				$(".info").css("display","block")
+					var mySwiper = new Swiper('.swiper-container', {
+							autoplay: 10000, //可选选项，自动滑动
+							direction: 'vertical',
+							mousewheelControl: true,
+							loop: true,
+							speed: 1200,
+							zoom: true,
+							pagination: '.swiper-pagination',
+							paginationType: 'progress',
+							onInit: function(swiper) {
+								swiperAnimateCache(swiper);
+								swiperAnimate(swiper);
+							},
+							watchSlidesProgress: true,
+							onProgress: function(swiper) {
+								for(var i = 0; i < swiper.slides.length; i++) {
+									var slide = swiper.slides[i];
+									var progress = slide.progress;
+									var translate = progress * swiper.height / 4;
+									scale = 1 - Math.min(Math.abs(progress * 0.5), 1);
+									var opacity = 1 - Math.min(Math.abs(progress / 2), 0.5);
+									slide.style.opacity = opacity;
+									es = slide.style;
+									es.webkitTransform = es.MsTransform = es.msTransform = es.MozTransform = es.OTransform = es.transform = 'translate3d(0,' + translate + 'px,-' + translate + 'px) scaleY(' + scale + ')';
+								}
+							},
+							onSetTransition: function(swiper, speed) {
+								for(var i = 0; i < swiper.slides.length; i++) {
+									es = swiper.slides[i].style;
+									es.webkitTransitionDuration = es.MsTransitionDuration = es.msTransitionDuration = es.MozTransitionDuration = es.OTransitionDuration = es.transitionDuration = speed + 'ms';
+								}
+							},
+						})
+				if(pause) {
+					pause = false;
+					document.getElementById("bgmusic").pause();
+	
+				} else {
+					pause = true;
+					document.getElementById("bgmusic").play();
+		
+				}
+
+			}
     </script>
 </body>
 
