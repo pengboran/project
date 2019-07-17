@@ -9,12 +9,13 @@
 		<link rel="stylesheet" href="css/animate.min.css">
 		<link href="css/index.css" rel="stylesheet" />
 		<style>
+
 		</style>
 	</head>
 
 	<body>
-			<div class="loading">
-			<div class="pageLoading"><img class="load_img" src="images/860230948310898378.jpg" /></div>
+		<div class="loading">
+			<div class="pageLoading"><img class="load_img" src="images/zhu.jpg" /></div>
 			<div class="page">
 				<div class="h832" style="padding-top: 0px;">
 					<div class="innerDiv">
@@ -29,50 +30,57 @@
 		<audio id="bgmusic" class="yue" controls preload="auto" loop="loop">
 			<source src="https://wx.wushang.com/papi/00.mp3" type="audio/mpeg">
 		</audio>
+					<div class="autoPlayBox">
+						<!-- <img class="xzAni" src="show/p1.jpg" /> -->
+						<img  src="images/play.png" />
+					</div>
+			
 		<div class="swiper-container">
 			<div class="swiper-wrapper">
 				<div id="last" class="swiper-slide">
 					<div class="imgbox" style="height: 100vh">
 						<img src="images/452826202081028910.jpg" />
-						<div class="info">
+						<div class="info" style="display: none;">
 							<p class="p1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay=".5s">丫头！终于鼓足勇气放手啦。</p>
 							<p class="p2 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="2s" swiper-animate-delay="1s">虽说这份相遇很短暂，但它也是珍贵的。</p>
 							<p class="p3 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="3s" swiper-animate-delay="2s" style="font-weight: bold;">但好像这样删掉彼此，显得并不是那么完美了</p>
 							<p class="p4 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="4s" swiper-animate-delay="3s" style="font-weight: bold;">毕竟有过很多美好的回忆</p>
-						    <p class="p5 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="5s" swiper-animate-delay="4s" style="font-weight: bold;">离不开的是习惯，慢慢的也就习惯了。</p>
-						    <p class="p6 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="6s" swiper-animate-delay="5s" style="font-weight: bold;">感情的经历有很多磕磕绊绊，庆幸我能拥有过这场经历</p>
-						    <p class="p7 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="7s" swiper-animate-delay="6s" style="font-weight: bold;">做不成恋人，也希望我们能保存那份当初的美好。</p>
-						    <p class="p8 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="8s" swiper-animate-delay="7s" style="font-weight: bold;">可能我很纠缠不清，没办法(^▽^ )那一句再见，有太多的的放不下</p>
-						    <p class="p9 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="9s" swiper-animate-delay="8s" style="font-weight: bold;">师妹！以后有缘再见吧</p>
+							<p class="p5 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="5s" swiper-animate-delay="4s" style="font-weight: bold;">离不开的是习惯，慢慢的也就习惯了。</p>
+							<p class="p6 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="6s" swiper-animate-delay="5s" style="font-weight: bold;">感情的经历有很多磕磕绊绊，庆幸我能拥有过这场经历</p>
+							<p class="p7 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="7s" swiper-animate-delay="6s" style="font-weight: bold;">做不成恋人，也希望我们能保存那份当初的美好。</p>
+							<p class="p8 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="8s" swiper-animate-delay="7s" style="font-weight: bold;">可能我很纠缠不清，没办法(^▽^ )那一句再见，有太多的的放不下</p>
+							<p class="p9 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="9s" swiper-animate-delay="8s" style="font-weight: bold;">师妹！以后有缘再见吧</p>
 						</div>
 					</div>
 
 				</div>
-
+             <img src="images/upArrow.png" id="array" class="resize" />
 			</div>
 			<div class="pauseBtn rotate"></div>
+		
 		</div>
-     
+
 		<script src="js/swiper.min.js"></script>
 		<script src="js/swiper.animate.min.js"></script>
 		<script src="js/zpto.js"></script>
 
 		<script>
-		
-				 scaleW = window.innerWidth / 320;
-        scaleH = window.innerHeight / 480;
-        var resizes = document.querySelectorAll('.resize');
-        for (var j = 0; j < resizes.length; j++) {
-            resizes[j].style.width = parseInt(resizes[j].style.width) * scaleW + 'px';
-            resizes[j].style.height = parseInt(resizes[j].style.height) * scaleH + 'px';
-            resizes[j].style.top = parseInt(resizes[j].style.top) * scaleH + 'px';
-            resizes[j].style.left = parseInt(resizes[j].style.left) * scaleW + 'px';
-        }
+			scaleW = window.innerWidth / 320;
+			scaleH = window.innerHeight / 480;
+			var resizes = document.querySelectorAll('.resize');
+			for(var j = 0; j < resizes.length; j++) {
+				resizes[j].style.width = parseInt(resizes[j].style.width) * scaleW + 'px';
+				resizes[j].style.height = parseInt(resizes[j].style.height) * scaleH + 'px';
+				resizes[j].style.top = parseInt(resizes[j].style.top) * scaleH + 'px';
+				resizes[j].style.left = parseInt(resizes[j].style.left) * scaleW + 'px';
+			}
 			var speed = 0;
+
 			function preloadimages(arr) {
 				var newimages = [],
 					loadedimages = 0;
 				var arr = (typeof arr != "object") ? [arr] : arr;
+
 				function imageloadpost() {
 					loadedimages++;
 					speed = parseInt(loadedimages / arr.length * 100);
@@ -80,44 +88,10 @@
 					$('.line_c .line').css('left', -(100 - speed) + '%');
 					if(loadedimages == arr.length) {
 						$('.loading').hide();
-					$(".swiper-container").css("display","block");
-									
-					               var mySwiper = new Swiper('.swiper-container', {
-            autoplay:10000,//可选选项，自动滑动
-            direction: 'vertical',
-            mousewheelControl: true,
-            loop: false,
-            speed: 1200,
-            zoom: true,
-            pagination: '.swiper-pagination',
-            paginationType: 'progress',
-            onInit: function (swiper) {
-                swiperAnimateCache(swiper);
-                swiperAnimate(swiper);
-            },
-            watchSlidesProgress: true,
-            onProgress: function (swiper) {
-                for (var i = 0; i < swiper.slides.length; i++) {
-                    var slide = swiper.slides[i];
-                    var progress = slide.progress;
-                    var translate = progress * swiper.height / 4;
-                    scale = 1 - Math.min(Math.abs(progress * 0.5), 1);
-                    var opacity = 1 - Math.min(Math.abs(progress / 2), 0.5);
-                    slide.style.opacity = opacity;
-                    es = slide.style;
-                    es.webkitTransform = es.MsTransform = es.msTransform = es.MozTransform = es.OTransform = es.transform = 'translate3d(0,' + translate + 'px,-' + translate + 'px) scaleY(' + scale + ')';
-                }
-            },
-            onSetTransition: function (swiper, speed) {
-                for (var i = 0; i < swiper.slides.length; i++) {
-                    es = swiper.slides[i].style;
-                    es.webkitTransitionDuration = es.MsTransitionDuration = es.msTransitionDuration = es.MozTransitionDuration = es.OTransitionDuration = es.transitionDuration = speed + 'ms';
-                }
-            },
-        })
+						$(".swiper-container").css("display", "block");
 					}
-			}
-				
+				}
+
 				for(var i = 0; i < arr.length; i++) {
 					newimages[i] = new Image();
 					newimages[i].src = arr[i];
@@ -131,21 +105,56 @@
 			}
 			var imagesarray = ["https://pengboran.github.io/swiper/YaTou/images/452826202081028910.jpg"];
 			preloadimages(imagesarray);
-				       var pause=true;
-                document.getElementsByClassName("pauseBtn")[0].onclick=function(){
-                    if (pause) {
-                        pause=false;
-                        document.getElementById("bgmusic").pause();
-                        this.style.background="url(images/music2.png) no-repeat";
-                        this.style.backgroundSize="100% 100%";
-                    }else{
-                        pause=true;
-                        document.getElementById("bgmusic").play();
-                        this.style.background="url('images/music1.png') no-repeat";
-                        this.style.backgroundSize="100% 100%";
-                    }
+			
+			
+			var pause = false;
+			document.getElementsByClassName("autoPlayBox")[0].onclick = function() {
+				$(".autoPlayBox").hide();
+				$(".info").css("display","block")
+					var mySwiper = new Swiper('.swiper-container', {
+							autoplay: 10000, //可选选项，自动滑动
+							direction: 'vertical',
+							mousewheelControl: true,
+							loop: false,
+							speed: 1200,
+							zoom: true,
+							pagination: '.swiper-pagination',
+							paginationType: 'progress',
+							onInit: function(swiper) {
+								swiperAnimateCache(swiper);
+								swiperAnimate(swiper);
+							},
+							watchSlidesProgress: true,
+							onProgress: function(swiper) {
+								for(var i = 0; i < swiper.slides.length; i++) {
+									var slide = swiper.slides[i];
+									var progress = slide.progress;
+									var translate = progress * swiper.height / 4;
+									scale = 1 - Math.min(Math.abs(progress * 0.5), 1);
+									var opacity = 1 - Math.min(Math.abs(progress / 2), 0.5);
+									slide.style.opacity = opacity;
+									es = slide.style;
+									es.webkitTransform = es.MsTransform = es.msTransform = es.MozTransform = es.OTransform = es.transform = 'translate3d(0,' + translate + 'px,-' + translate + 'px) scaleY(' + scale + ')';
+								}
+							},
+							onSetTransition: function(swiper, speed) {
+								for(var i = 0; i < swiper.slides.length; i++) {
+									es = swiper.slides[i].style;
+									es.webkitTransitionDuration = es.MsTransitionDuration = es.msTransitionDuration = es.MozTransitionDuration = es.OTransitionDuration = es.transitionDuration = speed + 'ms';
+								}
+							},
+						})
+				if(pause) {
+					pause = false;
+					document.getElementById("bgmusic").pause();
+	
+				} else {
+					pause = true;
+					document.getElementById("bgmusic").play();
+		
+				}
 
-                }
+			}
 		</script>
 	</body>
 
